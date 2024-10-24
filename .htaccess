@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Ensure that the request is not for a directory or an existing file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite URL without .html extension
+RewriteRule ^(.*)/([^/]+)$ $1/$2.html [L]
